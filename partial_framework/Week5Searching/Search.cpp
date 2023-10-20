@@ -30,7 +30,25 @@ int LinearScan(std::vector<int> arr, int key)
 int BinarySearch(std::vector<int> arr, int key)
 {
 	// TODO: Assessed [1]
-	return 0;
+	int high = arr.back() - 1;
+	int low = 0;
+	while (low <= high)
+	{
+		int mid = ((high + low) / 2);
+		if (arr[mid] == key)
+		{
+			return key;
+		}
+		if (arr[mid] < key)
+		{
+			low = mid + 1;
+		}
+		else
+		{
+			high = mid - 1;
+		}
+	}
+	return -1;
 }
 
 // Return index position of key in arr or -1 if not in collection.
