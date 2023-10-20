@@ -15,7 +15,14 @@
 int LinearScan(std::vector<int> arr, int key)
 {
 	// TODO: Assessed [1]
-	return 0;
+	for (int i = 0; i < arr.back(); ++i)
+	{
+		if (arr[i] == key)
+		{
+			return key;
+		}
+	}
+	return -1;
 }
 
 // Return index position of key in arr or -1 if not in collection.
