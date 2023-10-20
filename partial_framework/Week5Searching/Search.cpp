@@ -56,7 +56,29 @@ int BinarySearch(std::vector<int> arr, int key)
 int InterpolationSearch(std::vector<int> arr, int key)
 {
 	// TODO: Assessed [1]
-	return 0;
+	int start = 0;
+	int end = arr.size() - 1;
+	while (start <= end && key >= arr[start] && key <= arr[end])
+	{
+		int dist = key - arr[start];
+		int valueRange = arr[end] - arr[start];
+		int fraction = dist / valueRange;
+		int indexRange = end - start;
+		int estimate = start + (fraction * indexRange);
+		if (arr[estimate] == key)
+		{
+			return estimate;
+		}
+		if (arr[estimate] < key)
+		{
+			start = estimate + 1;
+		}
+		else
+		{
+			end = estimate - 1;
+		}
+	}
+	return -1;
 }
 
 /*
