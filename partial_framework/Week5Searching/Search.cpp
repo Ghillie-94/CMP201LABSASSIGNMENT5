@@ -19,7 +19,7 @@ int LinearScan(std::vector<int> arr, int key)
 	{
 		if (arr[i] == key)
 		{
-			return key;
+			return i;
 		}
 	}
 	return -1;
@@ -34,10 +34,10 @@ int BinarySearch(std::vector<int> arr, int key)
 	int low = 0;
 	while (low <= high)
 	{
-		int mid = ((high + low) / 2);
+		int mid = floor((high + low) / 2);
 		if (arr[mid] == key)
 		{
-			return key;
+			return mid;
 		}
 		if (arr[mid] < key)
 		{
